@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 Unported License.
+# (CC BY-SA-4.0) http://creativecommons.org/licenses/by-sa/4.0/
+
 import argparse
 
 from plexapi.server import PlexServer
