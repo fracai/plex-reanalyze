@@ -16,21 +16,14 @@ def analyze_item(server, key):
 def process_album(server, album, prefix_path=[], depth=0, dryrun=False):
     if prefix_path and album.title != prefix_path[0]:
         return
-    print multi_str('\t', depth) + 'album: ' + album.title
+    print '\t' * depth + 'album: ' + album.title
     for item in album.photos():
         if item.TYPE == 'photo':
-            print multi_str('\t', depth + 1) + 'photo: ' + item.title
+            print '\t' * (depth + 1) + 'photo: ' + item.title
             if not dryrun:
                 analyze_item(server, item.ratingKey)
         elif item.TYPE == 'photoalbum':
             process_album(server, item, prefix_path[1:] if prefix_path else None, depth=depth + 1, dryrun=dryrun)
-
-
-def multi_str(string, count):
-    output = ''
-    for _ in range(count):
-        output += string
-    return output
 
 
 if __name__ == '__main__':
