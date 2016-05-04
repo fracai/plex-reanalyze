@@ -3,14 +3,16 @@ a script for analyzing Plex media
 
 The Plex scanner can crash when processing a large number of media, such as a photo library. This script queries for all media in a given library, skips any that is not in the requested album, and requests each item be individually analyzed.
 
-# installation
 
-### requirements
+# requirements
 
 - python-plexapi
 - requests
 
 The current release of python-plexapi does not include photo library support, so you must install from source.
+
+
+# installation
 
 ```sh
 # clone plex-reanalyze
